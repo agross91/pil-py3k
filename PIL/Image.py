@@ -94,7 +94,14 @@ def isImageType(t):
 def isDirectory(f):
     return isStringType(f) and os.path.isdir(f)
 
-from operator import isNumberType, isSequenceType
+import collections
+import numbers
+
+def isSequenceType(obj):
+    return isinstance(obj, collections.Sequence)
+
+def isNumbertype(obj):
+    return isinstance(obj, numbers.Number)
 
 #
 # Debug level
